@@ -34,5 +34,4 @@ Pavarsha Sree
 https://github.com/pavarshasree/TechnoHacks-Task11-Customer-Segmentation-Tool
 
 ## Live Demo
-
-[https://technohacks-task11-customer-segmentation.onrender.com/predict](https://technohacks-task11-customer-segmentation.onrender.com/)
+https://technohacks-task11-customer-segmentation.onrender.com/
