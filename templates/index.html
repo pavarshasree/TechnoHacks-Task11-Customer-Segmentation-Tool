@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Segmentation Tool</title>
+</head>
+
+<body>
+
+<h2>Customer Segmentation Predictor</h2>
+
+<form action="/predict" method="post">
+
+    <input
+        type="number"
+        name="income"
+        placeholder="Annual Income"
+        required>
+
+    <br><br>
+
+    <input
+        type="number"
+        name="score"
+        placeholder="Spending Score"
+        required>
+
+    <br><br>
+
+    <button type="submit">
+        Predict
+    </button>
+
+</form>
+
+<h3>{{ prediction }}</h3>
+
+</body>
+</html>
