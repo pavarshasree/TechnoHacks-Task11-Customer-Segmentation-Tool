@@ -1,38 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Customer Segmentation Tool</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Segmentation</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      border: none;
+      border-radius: 20px;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      border-radius: 10px;
+    }
+
+    input {
+      border-radius: 10px !important;
+    }
+  </style>
 </head>
 
 <body>
 
-<h2>Customer Segmentation Predictor</h2>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
 
-<form action="/predict" method="post">
+  <div class="card shadow-lg p-4" style="width: 100%; max-width: 450px;">
 
-    <input
-        type="number"
-        name="income"
-        placeholder="Annual Income"
-        required>
+    <h3 class="text-center title">Customer Segmentation</h3>
+    <p class="text-muted text-center subtitle">
+      Enter customer details to predict segment
+    </p>
 
-    <br><br>
+    <form action="/predict" method="post">
 
-    <input
-        type="number"
-        name="score"
-        placeholder="Spending Score"
-        required>
+      <div class="mb-3">
+        <label class="form-label">Annual Income</label>
+        <input type="number" name="income" class="form-control" placeholder="e.g. 50000" required>
+      </div>
 
-    <br><br>
+      <div class="mb-3">
+        <label class="form-label">Spending Score</label>
+        <input type="number" name="score" class="form-control" placeholder="e.g. 70" required>
+      </div>
 
-    <button type="submit">
+      <button type="submit" class="btn btn-primary w-100">
         Predict
-    </button>
+      </button>
 
-</form>
+    </form>
 
-<h3>{{ prediction }}</h3>
+    {% if prediction %}
+    <div class="alert alert-success mt-4 text-center fw-bold">
+      Result: {{ prediction }}
+    </div>
+    {% endif %}
+
+  </div>
+
+</div>
 
 </body>
+</html>
 </html>
